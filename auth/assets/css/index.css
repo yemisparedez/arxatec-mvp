@@ -1,0 +1,8 @@
+/* Aqui ira los css comunes */
+@import 'themes/common.css';
+/* componentes */
+@import 'components/progress_bar.css';
+@import 'components/fade-in.css';
+
+
+

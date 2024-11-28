@@ -1,0 +1,142 @@
+/* Estilos para la barra de progreso más profesional */
+.progress-container {
+    position: relative;
+    margin-bottom: 30px;
+    margin-top: 50px;
+    height: 6px;
+    background-color: #e0e0e0;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    background-color: #0d6efd;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 5px;
+    transition: width 0.8s ease;
+    /* Transición más lenta para animar la barra */
+}
+
+.step-circle {
+    width: 50px;
+    height: 50px;
+    background-color: #e0e0e0;
+    border-radius: 50%;
+    text-align: center;
+    color: #fff;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.step-circle.active {
+    background-color: #0d6efd;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Posicionar los círculos en el centro de cada parte de la barra */
+#step1-circle {
+    left: 0%;
+    transform: translate(0, -50%);
+}
+
+#step2-circle {
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+#step3-circle {
+    left: 100%;
+    transform: translate(-100%, -50%);
+}
+
+/* Descripción debajo de la barra de progreso centrada con los círculos */
+.progress-text {
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.progress-text div {
+    width: 50px;
+    text-align: center;
+    margin-top: 10px;
+}
+
+/* Estilos para los textos no seleccionados */
+.inactive-step {
+    color: #888;
+    /* Color gris o desactivado */
+}
+
+/* Estilo para el texto activo (seleccionado) */
+.active-step {
+    color: #000;
+    /* Color negro o activo */
+}
+
+/* Estilos para el efecto de transición en los campos */
+.fade-field {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-field.show-field {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Estilos para el efecto de transición en los botones */
+.fade-button {
+    opacity: 0;
+    transform: scale(0.95);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.fade-button.show-button {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* Mantener la estructura del formulario */
+.form-floating {
+    position: relative;
+    display: block;
+    transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+}
+
+/* Agregar separación para los botones */
+.button-spacing {
+    margin-top: 30px; /* Ajusta el valor según la separación deseada */
+}
+
+/* Animación para el efecto de temblor */
+@keyframes shake {
+    0% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    50% { transform: translateX(5px); }
+    75% { transform: translateX(-5px); }
+    100% { transform: translateX(0); }
+}
+
+/* Clase para aplicar la animación de temblor */
+.shake {
+    animation: shake 0.3s ease-in-out;
+}
+
+/* Estilo para campos no válidos */
+.is-invalid {
+    border: 2px solid red !important;
+}

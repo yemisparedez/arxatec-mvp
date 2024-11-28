@@ -1,0 +1,84 @@
+/* Color negro por defecto */
+.link-item span {
+    color: black;
+}
+
+/* Color azul al pasar el mouse */
+.link-item:hover span {
+    color: blue;
+}
+
+/* Clase activa para el enlace seleccionado */
+.link-item.active-link span {
+    color: blue !important;
+}
+
+/* General dropdown menu styling */
+.custom-dropdown {
+    background-color: white;
+    border: none;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    border-radius: 10px;
+}
+
+.dropdown-content {
+    width: 350px;
+    background-color: white;
+    border: none;
+}
+
+/* Close button styling */
+.close-button {
+    width: 20px;
+    height: 20px;
+    background-color: white;
+    border: none;
+    border-radius: 50%;
+    border: 3px solid lightgray;
+    cursor: pointer;
+}
+
+.close-button i {
+    font-size: 0.75rem;
+}
+
+/* User info styling */
+.user-info {
+    margin-left: 1rem;
+}
+
+.user-name {
+    font-size: 0.95rem;
+}
+
+.user-role {
+    font-size: 0.75rem;
+}
+
+/* Profile section styling */
+.profile-img {
+    width: 80px;
+    height: 80px;
+}
+
+/* Icon container styling */
+.icon-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 10px;
+}
+
+.profile-icon {
+    background-color: #e0f7fa;
+}
+
+.notes-icon {
+    background-color: #e8f5e9;
+}
+
+.tasks-icon {
+    background-color: #ffebee;
+}

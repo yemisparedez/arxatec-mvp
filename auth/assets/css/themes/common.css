@@ -1,0 +1,19 @@
+/* CSS compartido */
+html,
+body {
+    height: 100%;
+    margin: 0;
+    background-color: rgb(58, 53, 160)
+}
+
+section {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+}
+
+/* Aumento de calidad al logo */
+.img-enhanced {
+    filter: brightness(1.2) contrast(1.1) saturate(1.2);
+    image-rendering: auto;
+}
