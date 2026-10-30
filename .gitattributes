@@ -1,0 +1,17 @@
+# GitHub language statistics: count the code of the original app, not the
+# bundled templates, libraries or generated files.
+*.php linguist-language=PHP
+
+projects/shared/scss/** linguist-vendored
+projects/shared/libs/** linguist-vendored
+projects/shared/dist/** linguist-vendored
+projects/shared/fonts/** linguist-vendored
+projects/shared/js/** linguist-vendored
+projects/shared/html/** linguist-vendored
+projects/shared/assets/vendor/** linguist-vendored
+web/css/*.min.css linguist-vendored
+web/js/*.min.js linguist-vendored
+web/js/jquery.slicknav.js linguist-vendored
+demo/runtime/vendor/** linguist-vendored
+
+demo/pages/** linguist-generated

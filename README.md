@@ -1,134 +1,131 @@
+<div align="center">
+
+<img src="web/img/ARXATEC.png" alt="ARXATEC logo" width="110">
+
 # ARXATEC MVP
 
-**The original MVP of ARXATEC (2024), where it all started.**
+**Online legal advice: the 2024 MVP where ARXATEC started.**
 
-ARXATEC began as this web platform: a place where people could get legal advice online, book video consultations with lawyers or ask questions by message, while an admin team managed users and plans. This repository keeps that first version exactly as it was built in 2024, as a record of the project's first steps.
+[![Open the live demo](https://img.shields.io/badge/Live_demo-Open-3f3ab8?style=for-the-badge&logo=googlechrome&logoColor=white)](https://arxatec-engine.github.io/arxatec-mvp/)
 
-**Live demo:** [arxatec-engine.github.io/arxatec-mvp](https://arxatec-engine.github.io/arxatec-mvp/)
-**Author:** [Yemis Paredez](https://linktr.ee/yemis_paredez)
+![PHP 8](https://img.shields.io/badge/PHP-8-777BB4?logo=php&logoColor=white) ![MySQL / MariaDB](https://img.shields.io/badge/MySQL-MariaDB-003545?logo=mariadb&logoColor=white) ![Bootstrap 5](https://img.shields.io/badge/Bootstrap-5-7952B3?logo=bootstrap&logoColor=white) ![JavaScript](https://img.shields.io/badge/JavaScript-ES6-F7DF1E?logo=javascript&logoColor=black) ![SQLite demo](https://img.shields.io/badge/Demo-SQLite_in_the_browser-003B57?logo=sqlite&logoColor=white) ![Archived MVP](https://img.shields.io/badge/Status-Archived_MVP-8a8f98) [![MIT License](https://img.shields.io/badge/License-MIT-2ea44f)](LICENSE)
+
+</div>
+
+<br>
 
 ![Login page of the live demo, with the demo panel open](docs/screenshots/login.png)
 
-## Author
+## 📖 The story
 
-Designed and built by **[Yemis Paredez](https://linktr.ee/yemis_paredez)**.
+ARXATEC started in 2024 as this MVP: a platform where people could get legal advice online, book a video consultation with a lawyer or ask a question by message. The code is preserved exactly as it was written, as a record of the project's first steps.
 
-## What it does
+## ✨ What it does
 
-The app has a public website and three private panels, one per role:
+| | Role | Features |
+| :---: | --- | --- |
+| 🌐 | **Visitor** | Public website with services, plans, testimonials and team. Sign-up as a client. |
+| 🙋 | **Client** | Requests video or message consultations, tracks their status and reviews past consultations. |
+| ⚖️ | **Lawyer** | Screens for public and private consultations, meetings and incidents (designed, not yet connected to the database). |
+| 🛡️ | **Admin** | Registers admins and lawyers, lists every user and manages their profile: photo, password and personal data. |
 
-| Role | What they can do |
-| --- | --- |
-| **Visitor** | Browse the public website (services, plans, testimonials, team, contact) and create a client account. |
-| **Client** | Request a video consultation or send a question by message to a lawyer, follow the status of each request and see the history of past consultations. |
-| **Lawyer** | Review public and private consultations, confirm meetings and report incidents. These screens were designed but not yet connected to the database. |
-| **Admin** | Register admins and lawyers, list every admin, lawyer and client, and manage their own profile (photo, password, personal data). The lawyer ranking and plan screens were early prototypes. |
+> [!NOTE]
+> The interface is in Spanish, as it was for its users in Peru.
 
-The interface is in Spanish, as it was for its users in Peru.
+## 🖼️ Screenshots
+
+<table>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/public-website.png" alt="Public website"><p align="center"><sub>Public website</sub></p></td>
+    <td width="50%"><img src="docs/screenshots/admin-dashboard.png" alt="Admin dashboard"><p align="center"><sub>Admin dashboard</sub></p></td>
+  </tr>
+  <tr>
+    <td width="50%"><img src="docs/screenshots/client-video-calls.png" alt="Client video consultations"><p align="center"><sub>Client · video consultations</sub></p></td>
+    <td width="50%"><img src="docs/screenshots/client-messages.png" alt="Client message consultations"><p align="center"><sub>Client · message consultations</sub></p></td>
+  </tr>
+</table>
+
+## 🚀 Live demo
+
+The demo runs entirely in the browser, with no server and no shared database.
 
 | | |
-| --- | --- |
-| ![Public website](docs/screenshots/public-website.png) | ![Admin dashboard](docs/screenshots/admin-dashboard.png) |
-| ![Client video consultations](docs/screenshots/client-video-calls.png) | ![Client message consultations](docs/screenshots/client-messages.png) |
+| :---: | --- |
+| 🧩 | **Same interface.** Every page is the HTML rendered by the original PHP app, with its own CSS, JavaScript and images. |
+| 🗄️ | **SQLite in the browser.** A small runtime replaces the PHP backend and runs the same queries on [sql.js](https://sql.js.org). |
+| 🔒 | **Private by design.** Data is saved in each visitor's browser (IndexedDB) and never leaves it. **Reset demo data** restores the initial state. |
 
-## Tech stack
-
-- **PHP 8**, no framework, organized in controllers, models and views per panel.
-- **MySQL / MariaDB** through `mysqli`.
-- **Bootstrap 5**, a free Bootstrap admin template for the panels and a Colorlib template for the public website.
-- jQuery, ApexCharts, Boxicons and Font Awesome.
-
-## Project structure
-
-```text
-arxatec-mvp/
-├── index.php              # Redirects to the login page
-├── auth/                  # Login, registration and password recovery
-├── projects/
-│   ├── admin/             # Admin panel
-│   ├── customer/          # Client panel
-│   ├── lawyer/            # Lawyer panel
-│   └── shared/            # Assets shared by the panels and profile images
-├── web/                   # Public website
-├── database/
-│   ├── connection/        # mysqli connection
-│   └── sql.txt            # Schema and seed data
-├── docker/                # Local environment (Apache + PHP + MariaDB)
-└── demo/                  # Static live demo (see below)
-```
-
-## Run it locally
-
-The original app needs PHP and MySQL. The `docker/` folder recreates the XAMPP setup it was written for, so the code runs unchanged.
-
-Requirements: [Docker Desktop](https://www.docker.com/products/docker-desktop/).
-
-```bash
-cd docker
-docker compose up -d --build
-```
-
-| Service | URL |
-| --- | --- |
-| App | http://localhost:8090 |
-| phpMyAdmin | http://localhost:8091 |
-| MariaDB | `localhost:3307`, user `root`, no password |
-
-The database is created from `database/sql.txt` the first time. To start again from the seed data, run `docker compose down -v` and then `docker compose up -d`.
-
-Without Docker, copy the project into XAMPP's `htdocs`, import `database/sql.txt` in phpMyAdmin and open `http://localhost/<folder>/`.
-
-### Demo accounts
+**Demo accounts.** The **Demo** tab on the right edge of every page signs in with one click.
 
 | Role | Email | Password |
 | --- | --- | --- |
-| Admin | `admin@gmail.com` | `admin` |
-| Client | `cliente@gmail.com` | `cliente` |
-| Lawyer | `abogado@gmail.com` | `abogado` |
+| 🛡️ Admin | `admin@gmail.com` | `admin` |
+| 🙋 Client | `cliente@gmail.com` | `cliente` |
+| ⚖️ Lawyer | `abogado@gmail.com` | `abogado` |
 
-## Live demo
+<details>
+<summary><b>Differences from the original app</b></summary>
 
-The live demo runs entirely in the browser, with no server and no shared database:
+<br>
 
-- **Same interface.** Its pages are the HTML that the PHP app renders, captured from the running app, with the original CSS, JavaScript and images.
-- **SQLite in the browser.** A small runtime replaces the PHP backend: it runs the same queries as the original models against a SQLite database ([sql.js](https://sql.js.org)) created from the same schema and seed data.
-- **Private to each visitor.** The database is saved in the visitor's browser (IndexedDB). What one visitor creates is never sent anywhere and nobody else can see it. **Reset demo data** in the demo panel restores the seed.
+- The client's status and history pages include sample consultations so they are not empty.
+- *Create plan* and the admin's *personal data* form save their changes; in the original app their handlers were never finished.
+- Forms that post to scripts missing from the original app, such as the support form, show a notice instead of an error page.
 
-The only element added to the interface is the **Demo** tab on the right edge. It lists the demo accounts, signs in with one click and links to the public website, this repository and the author.
+</details>
 
-Differences from the original app:
+## 🗂️ Project structure
 
-- The client's status and history pages include a few sample consultations so they are not empty.
-- *Create plan* and the admin's *personal data* form save their changes. In the original app their forms point to handlers that were never finished.
-- Forms that post to scripts that do not exist in the original app (for example the support form) show a notice instead of an error page.
+```text
+arxatec-mvp/
+├── auth/          Login, registration and password recovery
+├── projects/
+│   ├── admin/     Admin panel
+│   ├── customer/  Client panel
+│   ├── lawyer/    Lawyer panel
+│   └── shared/    Shared assets and profile images
+├── web/           Public website
+├── database/      mysqli connection and schema with seed data (sql.txt)
+├── demo/          Static live demo: captured pages, SQLite runtime and build scripts
+└── docker/        PHP + MariaDB environment used to capture the demo
+```
 
-### Rebuild the demo
+> [!WARNING]
+> This code is not meant for production: passwords are stored in plain text, some queries concatenate user input and a few forms point to scripts that were never written.
 
-Rebuilding is only needed after changing the PHP views. It captures the pages from a temporary copy of the app with a fresh database, so no local test data ends up in the repository:
+<details>
+<summary><b>🛠️ Rebuilding the demo</b></summary>
+
+<br>
+
+Only needed after changing the PHP views. Requires Docker and Node.js 20+.
 
 ```bash
+# 1. Capture the pages from a temporary copy of the app with a fresh database
 cd docker
 WEB_PORT=8092 DB_PORT=3308 docker compose -p arxatec-capture up -d --build db web
 cd ..
 node demo/capture.mjs http://localhost:8092
 docker compose -f docker/docker-compose.yml -p arxatec-capture down -v
-```
 
-Build and preview it (Node.js 20 or later):
-
-```bash
+# 2. Build and preview at http://localhost:8095
 node demo/build.mjs
 node demo/serve.mjs
 ```
 
-The demo is then at http://localhost:8095. The **Deploy demo to GitHub Pages** workflow builds and publishes it; it runs only when started manually from the Actions tab.
+The **Deploy demo to GitHub Pages** workflow publishes `demo/dist` when started manually from the Actions tab.
 
-## About this code
+</details>
 
-This is the MVP as it was written in 2024 and it is kept unchanged on purpose. It is not meant to be deployed as is: passwords are stored in plain text, some queries are built by concatenating input, and a few forms point to scripts that were never written. Those were the next steps when the project moved on.
+## 👤 Author
 
-## License
+<table>
+  <tr>
+    <td><img src="https://github.com/yemisparedez.png?size=160" alt="Yemis Paredez" width="72"></td>
+    <td><b>Yemis Paredez</b><br>Designed and built ARXATEC MVP.<br>🔗 <a href="https://linktr.ee/yemis_paredez">linktr.ee/yemis_paredez</a></td>
+  </tr>
+</table>
 
-[MIT](LICENSE) © 2024 [Yemis Paredez](https://linktr.ee/yemis_paredez).
+## 📄 License
 
-The demo bundles [sql.js](https://github.com/sql-js/sql.js) (MIT). The UI templates and images belong to their respective authors.
+[MIT](LICENSE) © 2024 Yemis Paredez. The demo bundles [sql.js](https://github.com/sql-js/sql.js) (MIT); UI templates and images belong to their respective authors.
