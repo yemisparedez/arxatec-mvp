@@ -1,0 +1,148 @@
+
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/img/favicona.png">
+    <!-- Biblioteca Iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://unpkg.com/bootstrap@5.3.3/dist/css/bootstrap.min.css">
+    <!-- Estilo CSS -->
+    <link rel="stylesheet" href="assets/css/index.css">
+    <!-- Scripts Bibliotecas -->
+    <script src="https://unpkg.com/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Scripts Js -->
+    <script src="assets/js/script.js"></script>
+    <script src="assets/js/handlers/title_updater.js"></script>
+    <script src="assets/js/handlers/page_handler.js"></script>
+    <script src="assets/js/animations/progress_animation.js"></script>
+    <script src="assets/js/animations/toggle_password_visibility.js"></script>
+    <script>
+        // Recargar la página si se navega hacia atrás en el historial
+        window.onpageshow = function(event) {
+            if (event.persisted) {
+                window.location.reload();
+            }
+        };
+    </script>
+
+</head><body>
+    <section class="py-3 py-md-5 py-xl-8">
+        <div class="container">
+            <div class="row gy-4 align-items-center">
+                <div class="col-12 col-md-6 col-xl-7 fade-in">
+                    <div class="d-flex justify-content-center">
+                        <div class="col-12 col-xl-9">
+                            <img class="img-fluid rounded mb-4 img-enhanced" loading="lazy" src="assets/img/nde.png" width="245" height="80" alt="Logo de BootstrapBrain">
+                            <hr class="border-primary-subtle mb-4">
+                            <h2 class="h1 mb-4 text-white d-none d-md-block">Descubre soluciones legales ajustadas a tus necesidades.</h2>
+                            <p class="lead mb-5 text-white d-none d-lg-block">Obtén una cuenta para comenzar a recibir asesoramiento jurídico, realizar consultas y seguir tus casos de forma segura y eficiente.</p>
+                            <div class="text-endx d-none d-md-block">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="white" class="bi bi-grip-horizontal" viewBox="0 0 16 16">
+                                    <path d="M2 8a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm3 3a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm0-3a1 1 0 1 1 0 2 1 1 0 0 1 0-2z" />
+                                </svg>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Registro Paso a Paso con Circulos en la Barra de Progreso -->
+                <div class="col-12 col-md-6 col-xl-5">
+                    <div class="card border-0 rounded-4" id="register-form">
+                        <div class="card-body p-3 p-md-4 p-xl-5">
+                            <div class="mb-4">
+                                <h3>Registro</h3>
+                                <p>¿Ya tienes una cuenta? <a href="index.php?page=login" id="load-login">Inicia sesión</a></p>
+                            </div>
+
+                            <!-- Barra de Progreso con Iconos -->
+                            <div class="progress-container">
+                                <div id="progress-fill" class="progress-bar-fill" style="width: 0%;"></div>
+                                <div id="step1-circle" class="step-circle">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div id="step2-circle" class="step-circle">
+                                    <i class="fas fa-id-card"></i>
+                                </div>
+                                <div id="step3-circle" class="step-circle">
+                                    <i class="fas fa-lock"></i>
+                                </div>
+                            </div>
+
+                            <div class="d-flex justify-content-between progress-text">
+                                <div class="inactive-step">Datos</div>
+                                <div class="inactive-step">Cuenta</div>
+                                <div class="inactive-step">Clave</div>
+                            </div>
+
+                            <!-- Formulario de registro -->
+                            <form method="POST" action="index.php?page=register">
+                                <div class="tab-content mt-4">
+                                    <!-- Paso 1: Nombre y Apellidos -->
+                                    <div class="tab-pane fade show active" id="step1" role="tabpanel">
+                                        <div class="form-floating mb-3 fade-field show-field">
+                                            <input type="text" class="form-control" name="nombres" id="first_name" placeholder="Nombres" required>
+                                            <label for="first_name" class="form-label">Nombres</label>
+                                        </div>
+                                        <div class="form-floating mb-3 fade-field show-field">
+                                            <input type="text" class="form-control" name="apellidos" id="last_name" placeholder="Apellidos" required>
+                                            <label for="last_name" class="form-label">Apellidos</label>
+                                        </div>
+                                        <div class="d-grid button-spacing">
+                                            <button type="button" class="btn btn-primary fade-button show-button" onclick="nextStep(2)">Siguiente</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Paso 2: DNI y Correo Electrónico -->
+                                    <div class="tab-pane fade" id="step2" role="tabpanel">
+                                        <div class="form-floating mb-3 fade-field">
+                                            <input type="text" class="form-control" name="dni" id="dni" placeholder="DNI" required onblur="checkDni()" oninput="validateDniFormat()">
+                                            <label for="dni" class="form-label">DNI</label>
+                                            <div id="dni-error" style="display: none; color: orange;">El DNI ya está en uso.</div>
+                                            <div id="dni-format-error" style="display: none; color: red;">El DNI solo debe contener números.</div>
+                                        </div>
+                                        <div class="form-floating mb-3 fade-field">
+                                            <input type="email" class="form-control" name="correo_electronico" id="email" placeholder="nombre@ejemplo.com" required onblur="checkEmail()">
+                                            <label for="email" class="form-label">Correo Electrónico</label>
+                                            <div id="email-error" style="display: none; color: orange;">El correo electrónico ya está en uso.</div>
+                                        </div>
+                                        <div class="d-flex justify-content-between button-spacing">
+                                            <button type="button" class="btn btn-secondary fade-button" onclick="prevStep(1)">Anterior</button>
+                                            <button type="button" class="btn btn-primary fade-button" onclick="nextStep(3)">Siguiente</button>
+                                        </div>
+                                    </div>
+
+                                    <!-- Paso 3: Contraseña -->
+                                    <div class="tab-pane fade" id="step3" role="tabpanel">
+                                        <div class="form-floating mb-3 fade-field position-relative">
+                                            <input type="password" class="form-control" name="contraseña" id="password" placeholder="Contraseña" required>
+                                            <label for="password" class="form-label">Contraseña</label>
+                                            <i class="fas fa-eye position-absolute top-50 end-0 translate-middle-y me-3" id="togglePassword" style="cursor: pointer; color: grey;"></i>
+                                        </div>
+                                        <div class="form-floating mb-3 fade-field position-relative">
+                                            <input type="password" class="form-control" name="confirm_password" id="confirm_password" placeholder="Confirmar Contraseña" required>
+                                            <label for="confirm_password" class="form-label">Confirmar Contraseña</label>
+                                            <div id="password-match-error" style="display: none; color: red;">Las contraseñas no coinciden.</div>
+                                            <i class="fas fa-eye position-absolute top-50 end-0 translate-middle-y me-3" id="toggleConfirmPassword" style="cursor: pointer; color: grey;"></i>
+                                        </div>
+                                        <div class="d-flex justify-content-between button-spacing">
+                                            <button type="button" class="btn btn-secondary fade-button" onclick="prevStep(2)">Anterior</button>
+                                            <button type="submit" class="btn btn-success fade-button" onclick="return checkPasswordMatch()">Registrar</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="text-center mt-4">
+                                <small class="text-muted">
+                                    Al crear una cuenta ArxaTEC, aceptas nuestros <a href="app/views/pages/legal/terms.php" target="_blank">Términos de Servicio</a> y <a href="app/views/pages/legal/privacy.php" target="_blank">Política de Privacidad</a>.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</body>

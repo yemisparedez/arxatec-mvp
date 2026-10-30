@@ -1,0 +1,474 @@
+<html lang="en" class="light-style layout-menu-fixed layout-compact" dir="ltr" data-theme="theme-default"
+    data-assets-path="../shared/assets/" data-template="vertical-menu-template-free" data-style="light">
+
+<head>
+    <meta charset="utf-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0, user-scalable=no, minimum-scale=1.0, maximum-scale=1.0" />
+
+    <title>ArxaTEC</title>
+
+    <meta name="description" content="" />
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../shared/assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Bibliotecas Icons -->
+    <link rel="stylesheet" href="../shared/assets/vendor/fonts/boxicons.css" />
+
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../shared/assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../shared/assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../shared/assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../shared/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+    <link rel="stylesheet" href="../shared/assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+    <link rel="stylesheet" href="../shared/assets/css/index.css" />
+    <!-- Helpers -->
+    <script src="../shared/assets/vendor/js/helpers.js"></script>
+    <script src="../shared/assets/js/config.js"></script>
+
+    <!-- Intro.js -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/intro.js/5.0.0/introjs.min.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/intro.js/5.0.0/intro.min.js"></script>
+
+</head>
+<body>
+    <!-- Layout wrapper -->
+    <div class="layout-wrapper layout-content-navbar">
+        <div class="layout-container">
+
+            <!-- Incluir el sidebar -->
+            <!-- Menu -->
+<aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+    <div class="app-brand demo">
+        <a href="#" class="app-brand-link">
+            <span class="app-brand-logo demo">
+                <img src="../shared/assets/img/branding/logo_adjunto.png" width="50">
+            </span>
+            <span class="app-brand-text demo menu-text fw-bold" style="font-size: 1.5rem; line-height: 1;">
+                <span style="color: rgb(166, 166, 166);">Arxa</span><span style="color: rgb(58, 53, 160);">TEC</span>
+            </span>
+        </a>
+        <a href="javascript:void(0);" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+            <i class="bx bx-chevron-left bx-sm d-flex align-items-center justify-content-center"></i>
+        </a>
+    </div>
+
+    <div class="menu-inner-shadow"></div>
+
+    <ul class="menu-inner py-1">
+        <!-- Dashboards -->
+        <li class="menu-item ">
+            <a href="?page=dashboard" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-smile"></i>
+                <div class="text-truncate">Dashboard</div>
+            </a>
+        </li>
+
+        <!-- Gestión de Usuarios -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Control Accesos</span>
+        </li>
+        <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-user-plus"></i>
+                <div class="text-truncate">Miembros</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item ">
+                    <a href="?page=add_admin" class="menu-link">
+                        <div class="text-truncate">Nuevo Admin</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="?page=add_lawyer" class="menu-link">
+                        <div class="text-truncate">Nuevo Abogado</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-list-ul"></i>
+                <div class="text-truncate">Panel de Contactos</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item ">
+                    <a href="?page=admin_list" class="menu-link">
+                        <div class="text-truncate">Administradores</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="?page=lawyer_list" class="menu-link">
+                        <div class="text-truncate">Red de Abogados</div>
+                    </a>
+                </li>
+                <li class="menu-item ">
+                    <a href="?page=client_list" class="menu-link">
+                        <div class="text-truncate">Base de Clientes</div>
+                    </a>
+                </li>
+            </ul>
+        </li>
+
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Estadísticas</span>
+        </li>
+        <li class="menu-item active open">
+            <a href="?page=lawyer_ranking" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-bar-chart-alt-2"></i>
+                <div class="text-truncate">Ranking</div>
+            </a>
+        </li>
+
+        <!-- Nuevos Planes -->
+        <li class="menu-header small text-uppercase">
+            <span class="menu-header-text">Gestión de Planes</span>
+        </li>
+        <li class="menu-item ">
+            <a href="javascript:void(0);" class="menu-link menu-toggle">
+                <i class="menu-icon tf-icons bx bx-package"></i>
+                <div class="text-truncate">Planes</div>
+            </a>
+            <ul class="menu-sub">
+                <li class="menu-item ">
+                    <a href="?page=create_plan" class="menu-link">
+                        <div class="text-truncate">Crear Nuevo Plan</div>
+                    </a>
+                </li>
+                <!-- Aquí puedes agregar más opciones de submenú si es necesario -->
+            </ul>
+        </li>
+    </ul>
+</aside>
+<!-- / Menu -->
+            <!-- Layout container -->
+            <div class="layout-page">
+
+                <!-- Navbar -->
+<nav class="layout-navbar container-xxl navbar navbar-expand-xl navbar-detached align-items-center bg-navbar-theme" id="layout-navbar">
+    <div class="layout-menu-toggle navbar-nav align-items-xl-center me-4 me-xl-0 d-xl-none">
+        <a class="nav-item nav-link px-0 me-xl-6" href="javascript:void(0)">
+            <i class="bx bx-menu bx-md"></i>
+        </a>
+    </div>
+
+    <div class="navbar-nav-right d-flex align-items-center" id="navbar-collapse">
+        <!-- Search -->
+        <div class="navbar-nav align-items-center">
+            <div class="nav-item d-flex align-items-center">
+                <i class="bx bx-search bx-md"></i>
+                <input type="text" class="form-control border-0 shadow-none ps-1 ps-sm-2" placeholder="Buscar..." aria-label="Buscar..." />
+            </div>
+        </div>
+        <!-- /Search -->
+
+        <ul class="navbar-nav flex-row align-items-center ms-auto">
+            <!-- Notifications Icon -->
+            <li class="nav-item dropdown dropdown-animated ms-3">
+                <a class="nav-link p-1 dropdown-toggle hide-arrow" href="#" id="notificationsDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" class="iconify iconify--solar">
+                        <g fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M18.75 9.71v-.705C18.75 5.136 15.726 2 12 2S5.25 5.136 5.25 9.005v.705a4.4 4.4 0 0 1-.692 2.375L3.45 13.81c-1.011 1.575-.239 3.716 1.52 4.214a25.8 25.8 0 0 0 14.06 0c1.759-.498 2.531-2.639 1.52-4.213l-1.108-1.725a4.4 4.4 0 0 1-.693-2.375Z"></path>
+                            <path stroke-linecap="round" d="M7.5 19c.655 1.748 2.422 3 4.5 3s3.845-1.252 4.5-3M12 6v4"></path>
+                        </g>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end custom-dropdown mt-3" aria-labelledby="notificationsDropdown">
+                    <li class="p-4 dropdown-content">
+                        <h5 class="mb-3">Notificaciones</h5>
+                        <div class="notification-item mb-2 d-flex align-items-center">
+                            <i class="bx bx-calendar bx-md me-3 text-primary"></i>
+                            <div>
+                                <strong>Audiencia Programada</strong>
+                                <p class="mb-1">La audiencia del caso *Gómez vs. Hernández* está programada para el 25 de octubre a las 10:00 AM en la sala 3.</p>
+                                <small class="text-muted">Hace 2 horas</small>
+                            </div>
+                        </div>
+                        <div class="notification-item mb-2 d-flex align-items-center">
+                            <i class="bx bx-file bx-md me-3 text-success"></i>
+                            <div>
+                                <strong>Nuevo Documento Cargado</strong>
+                                <p class="mb-1">El cliente *Martínez & Asociados* ha subido un nuevo documento para el caso *Contrato Comercial*.</p>
+                                <small class="text-muted">Hace 5 horas</small>
+                            </div>
+                        </div>
+                        <div class="notification-item d-flex align-items-center">
+                            <i class="bx bx-alarm bx-md me-3 text-warning"></i>
+                            <div>
+                                <strong>Recordatorio de Vencimiento</strong>
+                                <p class="mb-1">El plazo para responder a la solicitud de pruebas en el caso *Lopez vs. Empresa XYZ* vence mañana.</p>
+                                <small class="text-muted">Hace 1 día</small>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- Messages Icon -->
+            <li class="nav-item dropdown dropdown-animated ms-3">
+                <a class="nav-link p-1 dropdown-toggle hide-arrow" href="#" id="messagesDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                    <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" width="24" height="24" viewBox="0 0 24 24" class="iconify iconify--solar">
+                        <g fill="none" stroke="currentColor" stroke-width="1.5">
+                            <path d="M22 12c0 5.523-4.477 10-10 10H2V12C2 6.477 6.477 2 12 2s10 4.477 10 10m-15-3h9m-9 4h9m-9 4h5"></path>
+                        </g>
+                    </svg>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end custom-dropdown mt-3" aria-labelledby="messagesDropdown">
+                    <li class="p-4 dropdown-content ">
+                        <h5 class="mb-3">Mensajes</h5>
+                        <div class="message-item mb-2 d-flex align-items-center">
+                            <img src="../shared/assets/img/avatars/2.png" alt="Consulta Legal" class="rounded-circle me-3" width="50" height="50">
+                            <div>
+                                <strong>Consulta Legal</strong>
+                                <p class="mb-1">"Hola, necesito una consulta sobre la cláusula de confidencialidad en un contrato de trabajo. ¿Podemos agendar una llamada?"</p>
+                                <small class="text-muted">Hace 3 horas</small>
+                            </div>
+                        </div>
+                        <div class="message-item mb-2 d-flex align-items-center">
+                            <img src="../shared/assets/img/avatars/3.png" alt="Respuesta del Cliente" class="rounded-circle me-3" width="50" height="50">
+                            <div>
+                                <strong>Respuesta del Cliente</strong>
+                                <p class="mb-1">"Gracias por el análisis del caso. Estoy de acuerdo con las modificaciones propuestas. ¿Cuál sería el siguiente paso?"</p>
+                                <small class="text-muted">Hace 6 horas</small>
+                            </div>
+                        </div>
+                        <div class="message-item d-flex align-items-center">
+                            <img src="../shared/assets/img/avatars/4.png" alt="Pregunta sobre Contrato" class="rounded-circle me-3" width="50" height="50">
+                            <div>
+                                <strong>Pregunta sobre Contrato</strong>
+                                <p class="mb-1">"¿Podemos revisar la sección 5 del contrato antes de enviarlo al cliente? Creo que hay un detalle que debemos ajustar."</p>
+                                <small class="text-muted">Hace 1 día</small>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </li>
+
+            <!-- User Dropdown -->
+            <li class="nav-item navbar-dropdown dropdown-user dropdown dropdown-animated ms-3">
+                <a class="nav-link dropdown-toggle hide-arrow p-0" href="javascript:void(0);" data-bs-toggle="dropdown">
+                    <div class="d-flex align-items-center">
+                        <div class="avatar avatar-online">
+                            <img src="../shared/assets/img/avatars/1.png" alt class="w-px-40 h-auto rounded-circle" />
+                        </div>
+                    </div>
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end custom-dropdown">
+                    <li class="p-4 dropdown-content">
+                        <div class="d-flex justify-content-between align-items-center mb-3">
+                            <h5 class="mb-0">Info Cuenta</h5>
+                            <div class="d-flex justify-content-center align-items-center close-button">
+                                <i class="bx bx-x text-muted"></i>
+                            </div>
+                        </div>
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="../shared/assets/img/avatars/1.png" alt="perfil" class="rounded-circle profile-img">
+                            <div class="ms-3">
+                                <h5 class="mb-0">Mike Nielsen</h5>
+                                <small class="text-muted">Admin</small>
+                                <div class="d-flex align-items-center mt-2">
+                                    <i class="bx bx-envelope me-1"></i>
+                                    <small class="text-muted">info@spikeadmin.com</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dropdown-divider my-3"></div>
+                        <ul class="list-unstyled">
+                            <!-- Mi Perfil -->
+                            <li class="mb-3">
+                                <a class="d-flex align-items-center py-2 link-item" href="?page=profile" data-link="profile">
+                                    <div class="icon-container profile-icon">
+                                        <i class="bx bx-user text-primary"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <span class="d-block">Mi Perfil</span>
+                                        <small class="text-muted">Datos personales</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- Configuración -->
+                            <li class="mb-3">
+                                <a class="d-flex align-items-center py-2 link-item" href="?page=settings" data-link="settings">
+                                    <div class="icon-container notes-icon">
+                                        <i class="bx bx-cog text-success"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <span class="d-block">Configuración</span>
+                                        <small class="text-muted">Preferencias del sistema</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- Plan de Facturación -->
+                            <li class="mb-3">
+                                <a class="d-flex align-items-center py-2 link-item" href="?page=subscription" data-link="subscription">
+                                    <div class="icon-container tasks-icon">
+                                        <i class="bx bx-credit-card text-warning"></i>
+                                    </div>
+                                    <div class="ms-3">
+                                        <span class="d-block">Mi Suscripción</span>
+                                        <small class="text-muted">Pagos y tarifas</small>
+                                    </div>
+                                </a>
+                            </li>
+                            <!-- Cerrar Sesión -->
+                            <li class="mt-4">
+                                <a class="btn btn-primary d-flex align-items-center justify-content-center py-2 px-4 text-white rounded-pill" href="../../auth/middleware/logout.php">
+                                    <i class="bx bx-power-off me-2"></i>
+                                    <span class="align-middle">Cerrar Sesión</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+            <!--/ User -->
+        </ul>
+    </div>
+</nav>
+<!-- / Navbar -->
+                <!-- Content wrapper -->
+                <div class="content-wrapper">
+                    <!-- Content -->
+
+                    <div class="container-xxl">
+    <div class="col-xxl">
+        <div class="card mb-6 mt-6">
+            <div class="card-header d-flex align-items-center justify-content-between">
+                <h5 class="mb-0">Ranking de Tareas del Abogado - ArxaTEC</h5>
+                <small class="text-muted float-end">Consulta y rankea las tareas completadas por el abogado</small>
+            </div>
+            <div class="card-body">
+                <form action="rank_lawyer_tasks.php" method="GET">
+                    <div class="mb-3">
+                        <label for="lawyer" class="form-label">Seleccionar Abogado</label>
+                        <select class="form-control" id="lawyer" name="lawyer" required>
+                            <option value="">Elige un abogado</option>
+                            <!-- Aquí puedes agregar opciones dinámicamente con PHP -->
+                            <option value="1">Juan Pérez</option>
+                            <option value="2">Ana López</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="taskType" class="form-label">Tipo de Tarea</label>
+                        <select class="form-control" id="taskType" name="taskType">
+                            <option value="">Todas las Tareas</option>
+                            <option value="legal">Legal</option>
+                            <option value="administrativa">Administrativa</option>
+                            <option value="investigacion">Investigación</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label for="dateRange" class="form-label">Rango de Fechas</label>
+                        <input type="date" class="form-control" id="startDate" name="startDate" placeholder="Fecha de inicio">
+                        <input type="date" class="form-control mt-2" id="endDate" name="endDate" placeholder="Fecha de fin">
+                    </div>
+                    <button type="submit" class="btn btn-primary">Ver Ranking</button>
+                </form>
+
+                <!-- Tabla para mostrar los resultados de las tareas -->
+                <div class="table-responsive mt-4">
+                    <table class="table table-striped">
+                        <thead>
+                            <tr>
+                                <th>#</th>
+                                <th>Tarea</th>
+                                <th>Fecha de Completado</th>
+                                <th>Tipo</th>
+                                <th>Calificación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <!-- Aquí puedes agregar las filas dinámicamente con PHP -->
+                            <tr>
+                                <td>1</td>
+                                <td>Redacción de contrato</td>
+                                <td>15/10/2024</td>
+                                <td>Legal</td>
+                                <td>4.5</td>
+                            </tr>
+                            <tr>
+                                <td>2</td>
+                                <td>Consulta con cliente</td>
+                                <td>10/10/2024</td>
+                                <td>Administrativa</td>
+                                <td>4.7</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+                    <!-- / Content -->
+
+                    <!-- Footer -->
+<footer class="content-footer footer bg-footer-theme">
+    <div class="container-xxl">
+        <div class="footer-container d-flex align-items-center justify-content-between py-4 flex-md-row flex-column">
+            <div class="text-body">
+                ©
+                <script>
+                    document.write(new Date().getFullYear());
+                </script>
+                , realizado por
+                <a href="#" target="_blank" class="footer-link">ArxaTEC</a>
+            </div>
+            <div class="d-none d-lg-inline-block">
+                <a href="#" class="footer-link me-4">Licencia</a>
+                <a href="#" class="footer-link">Soporte</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- / Footer -->
+                    <div class="content-backdrop fade"></div>
+                </div>
+                <!-- Content wrapper -->
+            </div>
+            <!-- / Layout page -->
+        </div>
+
+        <!-- Overlay -->
+        <div class="layout-overlay layout-menu-toggle"></div>
+    </div>
+    <!-- / Layout wrapper -->
+
+    <!-- Core JS -->
+<!-- build:js assets/vendor/js/core.js -->
+
+<script src="../shared/assets/vendor/libs/jquery/jquery.js"></script>
+<script src="../shared/assets/vendor/libs/popper/popper.js"></script>
+<script src="../shared/assets/vendor/js/bootstrap.js"></script>
+<script src="../shared/assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+<script src="../shared/assets/vendor/js/menu.js"></script>
+
+<!-- endbuild -->
+
+<!-- Vendors JS -->
+<script src="../shared/assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+<!-- Main JS -->
+<script src="../shared/assets/js/main.js"></script>
+
+<!-- Page JS -->
+<script src="../shared/assets/js/dashboards-analytics.js"></script>
+
+<!-- JS -->
+<script src="../shared/assets/js/navbar/interaction.js"></script>
+<script src="../shared/assets/js/navbar/dropdown_effects.js.js"></script>
+</body>
